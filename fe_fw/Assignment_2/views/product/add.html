@@ -1,0 +1,66 @@
+<div class="title">
+    <h2>Add product</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laudantium.</p>
+</div>
+<div class="bg-white p-4">
+    <form>
+        <div class="row">
+            <div class="mb-3 col">
+                <label for="name" class="form-label">Tên tiểu thuyết</label>
+                <input type="text" class="form-control rounded-0 border-0 border-bottom" id="name" placeholder="Nhập tên tiểu thuyết" ng-model="novel.novel_name">
+                <span class="text-danger" ng-show="checkData.novel_name == true">Vui lòng nhập tên tiểu thuyết</span>
+            </div>
+            <div class="mb-3 col">
+                <label for="date" class="form-label">Tác giả</label>
+                <input type="text" class="form-control rounded-0 border-0 border-bottom" id="date" placeholder="Nhập tên tác giả" ng-model="novel.author">
+                <span class="text-danger" ng-show="checkData.author == true">Vui lòng nhập tên tác giả</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col">
+                <label for="price" class="form-label">Số chương</label>
+                <input type="number" class="form-control rounded-0 border-0 border-bottom" id="price" placeholder="Nhập số chương" ng-model="novel.total_chapters">
+                <span class="text-danger" ng-show="checkData.total_chapters == true">Vui lòng nhập số chương</span>
+            </div>
+            <div class="mb-3 col">
+                <label for="quantity" class="form-label">Thể loại</label>
+                <select class="form-select rounded-0 border-0 border-bottom" ng-model="novel.genre_id">
+                    <option value="">Chọn thể loại</option>
+                    <option ng-repeat="gen in genres" value="{{gen.id}}">{{gen.genre_name}}</option>
+                  </select>
+                  <span class="text-danger" ng-show="checkData.genre_id == true">Vui lòng chọn thể loại</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="price" class="form-label">Trạng thái</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="active" ng-model="novel.status">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Active
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="inactive" ng-model="novel.status">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Inactive
+                    </label>
+                  </div>
+                  <span class="text-danger" ng-show="checkData.status == true">Vui lòng chọn trạng thái</span>
+            </div>
+            <div class="col mb-3">
+                <label for="formFile" class="form-label">Hình ảnh</label>
+                <input class="form-control rounded-0 border-0 border-bottom" type="text" id="formFile" ng-model="novel.image" placeholder="Nhập ảnh">
+                <span class="text-danger" ng-show="checkData.image == true">Vui lòng nhập hình ảnh</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="js-ckeditor" class="form-label">Giới thiệu</label>
+            <textarea class="form-control border-0 border-bottom rounded-0" id="js-ckeditor" name="js-ckeditor" rows="3" ng-model="novel.introduce"></textarea>
+            <span class="text-danger" ng-show="checkData.introduce == true">Vui lòng nhập giới thiệu</span>
+        </div>
+        <button type="submit" class="btn btn-success rounded-0" ng-click="onAddNovelForm()">Add new novel</button>
+
+        <br>
+    </form>
+</div>

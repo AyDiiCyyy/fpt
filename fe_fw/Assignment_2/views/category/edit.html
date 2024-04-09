@@ -1,0 +1,38 @@
+<div class="title">
+    <h2>Chỉnh Sửa Thể Loại</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laudantium.</p>
+</div>
+
+<div class="bg-white p-4">
+    <form>
+        <div class="row">
+            <div class="mb-3 ">
+                <label for="name" class="form-label">Tên sản phẩm</label>
+                <input type="text" class="form-control rounded-0 border-0 border-bottom" id="name" placeholder="Enter name product" ng-model="value.genre_name">
+                <span class="text-danger" ng-show="checkData.genre_name == true">Vui lòng nhập tên thể loại</span>
+              </div>
+            
+        </div>
+        <div class="row">
+            <div class=" mb-3">
+                <label for="price" class="form-label">Trạng thái</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="active" ng-model="value.status">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Active
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="inactive" ng-model="value.status">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Inactive
+                    </label>
+                  </div>
+                  <span class="text-danger" ng-show="checkData.status == true">Vui lòng chọn trạng thái</span>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success rounded-0" ng-click="onUpdateGenre(value.id)">Update Genre</button>
+
+        <br>
+    </form>
+</div>

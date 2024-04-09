@@ -1,0 +1,37 @@
+<div class="title">
+    <h2>Danh Sách Thể Loại</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laudantium.</p>
+</div>
+
+<div class="bg-white p-2">
+    <div class="d-flex justify-content-end">
+        <button ng-click="onAddGenre()" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> Thêm thể loại mới
+        </button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tên thể loại</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="genre in genres">
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{genre.genre_name}}</td>
+                <td>
+                    <span class="badge bg-success" ng-if="genre.status == 'active'">{{genre.status}}</span>
+                    <span class="badge bg-danger" ng-if="genre.status == 'inactive'">{{genre.status}}</span>
+                </td>
+                <td>
+                    <button ng-click="onDetailGenre(genre.id)" class="btn btn-primary">Xem</button>
+                    <button ng-click="onEditGenre(genre.id)" class="btn btn-warning">Sửa</button>
+                    <button ng-click="onDeleteGenre(genre.id)" class="btn btn-danger">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

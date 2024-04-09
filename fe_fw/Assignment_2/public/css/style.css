@@ -1,0 +1,25 @@
+.circle {
+    width: 2rem;
+    height: 2rem;
+}
+.image-100 {
+    width: 100%;
+}
+
+.btn-icon-search {
+    background-color: #FFF;
+    border: none;
+    outline: none;
+}
+
+.mt-50 {
+    margin-top: 50%;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.active {
+    display: block;
+}

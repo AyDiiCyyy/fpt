@@ -1,0 +1,50 @@
+<div class="title">
+    <h2>Danh Sách Tiểu Thuyết</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laudantium.</p>
+</div>
+
+<div class="bg-white p-2">
+    <div class="d-flex justify-content-end">
+        <button ng-click="onAddNovel()" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> Thêm tiểu thuyết mới
+        </button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tên tiểu thuyết</th>
+                <th scope="col">Số chương</th>
+                <th scope="col">Thể loại</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Hoạt động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="novel in novels">
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{novel.novel_name}}</td>
+                <td>{{novel.total_chapters}}</td>
+
+                <td>
+                    <span ng-repeat="genr in listGenres">
+                        <span ng-show="novel.genre_id == genr.id">{{genr.genre_name}}</span>
+                    </span>
+                </td>
+
+                <td>
+                    <span class="badge bg-success" ng-if="novel.status == 'active'">{{novel.status}}</span>
+                    <span class="badge bg-danger" ng-if="novel.status == 'inactive'">{{novel.status}}</span>
+                </td>
+
+                <td>
+                    <button ng-click="onDetailNovel(novel.id)" class="btn btn-primary">Xem</button>
+                    <button ng-click="onEditNovel(novel.id)" class="btn btn-warning">Sửa</button>
+                    <button ng-click="onDeleteNovel(novel.id)" class="btn btn-danger">Xóa</button>
+                </td>
+
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

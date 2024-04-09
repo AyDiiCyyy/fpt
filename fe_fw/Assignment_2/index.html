@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2 FE-Framework</title>
+    <link rel="stylesheet" href="./libs/boostrap_v5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script src="./libs/fontawesome/js/all.min.js"></script>
+    <script src="./libs/boostrap_v5/js/bootstrap.bundle.min.js"></script>
+    <script src="./libs/angular_js/angular.min.js"></script>
+    <script src="./libs/angular_js/angular-route.min.js"></script>
+    <script src="./libs/ckeditor/ckeditor.js"></script>
+</head>
+
+<body ng-app="appRoute" class="container-fluid">
+    <div class="row">
+
+        <aside class="col-2 px-0" style="width: 40vh;">
+
+            <div class="logo px-4 bg-primary d-flex align-items-center justify-content-between">
+                <div style="width: 9.7rem;">
+                    <img class="image-100" src="data:image/png;base64,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" alt="logo">
+                </div>
+                <div class="">
+                    <i class="fa-solid fa-align-right text-white fs-4"></i>
+                </div>
+            </div>
+
+            <nav class="py-4 ps-3">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="mb-2"><a href="">Navigation</a></div>
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="pe-5 accordion-button collapsed bg-white shadow-none" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                <i class="fa-solid fa-list"></i> &nbsp; Danh Mục
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body py-1 px-4">
+                                <ul class="nav flex-column p-0 sub_menu--3">
+                                    <li class="nav-item ps-1">
+                                        <a class="nav-link text-secondary" href="#!/">List Danh Mục</a>
+                                    </li>
+                                    <li class="nav-item ps-1">
+                                        <a class="nav-link text-secondary" href="#!/category/add">Add Danh Mục</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="py-3" style="padding-left: 1.3rem;">
+                        <a href="" class="text-dark text-decoration-none"><i class="fa-regular fa-envelope"></i> &nbsp; MailBox</a>
+                    </div> -->
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="pe-5 accordion-button collapsed bg-white shadow-none" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                <i class="fa-brands fa-product-hunt"></i> &nbsp; Sản Phẩm
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body py-1 px-4">
+                                <ul class="nav flex-column p-0 sub_menu--3">
+                                    <li class="nav-item ps-1">
+                                        <a class="nav-link text-secondary" href="#!/product/list">List Sản Phẩm</a>
+                                    </li>
+                                    <li class="nav-item ps-1">
+                                        <a class="nav-link text-secondary" href="#!/product/add">Add Sản Phẩm</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+            </nav>
+        </aside>
+
+        <main class="bg-light col px-0" style="height: 100vh;">
+            <header class="bg-primary d-flex justify-content-between shadow py-3 px-4 gap-5">
+                <div class="col-7">
+                    <div class="bg-white d-flex">
+                        <button class="btn-icon-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="form-control border-0 shadow-none" id=""
+                            placeholder="Search something special">
+                    </div>
+                </div>
+
+                <div class="col-2 d-flex align-items-center">
+                    <div class="notif col">
+                        <i class="fa-regular fa-bell fs-5 text-white"></i>
+                    </div>
+                    <div class="mess col">
+                        <i class="fa-regular fa-envelope fs-5 text-white"></i>
+                    </div>
+                    <div class="avatar col-3">
+                        <div class="circle rounded-circle">
+                            <img class="rounded-circle image-100" src="./public/images/website/avatar.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div ng-view class="main-content p-4">
+                
+            </div>
+
+            <footer class="p-4">
+                <!-- @Copyright 2024 By Dat -->
+            </footer>
+        </main>
+
+    </div>
+
+    <script src="./routes/route.js"></script>
+    <script src="./controllers/category/CategoryListController.js"></script>
+    <script src="./controllers/category/CategoryAddController.js"></script>
+    <script src="./controllers/category/CategoryDetailController.js"></script>
+    <script src="./controllers/category/CategoryEditController.js"></script>
+    <script src="./controllers/product/ProductListController.js"></script>
+    <script src="./controllers/product/ProductAddController.js"></script>
+    <script src="./controllers/product/ProductDetailController.js"></script>
+    <script src="./controllers/product/ProductEditController.js"></script>
+    <script src="./public/js/script.js"></script>
+    <script></script>
+</body>
+
+</html>
